@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   Image,
@@ -26,20 +26,16 @@ export default class reactAnd extends Component {
 		var movie = MOCKED_MOVIES_DATA[0];
 
 		return (
-		<View style={styles.container}>
-			<Text
-				onClick={this.onClick}
-				style={styles.welcome}>
-				Welcome to React Native bruv!
-			</Text>
-			<Text style={styles.instructions}>
-				{movie.title}
-			</Text>
-			<Text style={styles.instructions}>
-				{movie.year}
-			</Text>
-			<Image style={styles.thumbnail} source={{uri: movie.posters.thumbnail}} />
-		</View>
+			<View style={styles.container}>
+				<Image
+					source={{uri: movie.posters.thumbnail}}
+					style={styles.thumbnail}
+				/>
+				<View style={styles.rightContainer}>
+					<Text style={styles.title}>{movie.title}</Text>
+					<Text style={styles.year}>{movie.year}</Text>
+				</View>
+			</View>
 		);
 	}
 }
@@ -47,6 +43,7 @@ export default class reactAnd extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: '#F5FCFF',
@@ -64,7 +61,18 @@ const styles = StyleSheet.create({
 	thumbnail: {
 		width: 53,
 		height: 81,
-	}
+	},
+	rightContainer: {
+		flex: 1,
+	},
+	title: {
+		fontSize: 20,
+		marginBottom: 8,
+		textAlign: 'center',
+	},
+	year: {
+		textAlign: 'center',
+	},
 });
 
 AppRegistry.registerComponent('reactAnd', () => reactAnd);
