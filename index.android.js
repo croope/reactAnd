@@ -30,7 +30,7 @@ export default class reactAnd extends Component {
 			<Text
 				onClick={this.onClick}
 				style={styles.welcome}>
-				Welcome to React Native!
+				Welcome to React Native bruv!
 			</Text>
 			<Text style={styles.instructions}>
 				{movie.title}
